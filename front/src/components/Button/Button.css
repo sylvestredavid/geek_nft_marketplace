@@ -1,0 +1,16 @@
+.btn{
+    background-color: rgb(97, 46, 238);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-disabled {
+    background-color: rgb(100, 97, 115);
+}

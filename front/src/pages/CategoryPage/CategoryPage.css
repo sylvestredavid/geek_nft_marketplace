@@ -1,0 +1,33 @@
+.categoryMain {
+    padding: 10px;
+}
+
+.categoryMain_infos {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.categoryMain_infos-cover {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: 5px solid white;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgb(0 0 0 / 8%);
+    margin-right: 20px;
+}
+
+.bgWheat {
+    background: wheat;
+}
+.categoryMain_nftsContainer{
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    row-gap: 15px;
+    column-gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px;
+}

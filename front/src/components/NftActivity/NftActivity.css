@@ -1,0 +1,22 @@
+.nftActivity {
+    width: 100%;
+    border: 1px solid #E5E8EB;
+    border-collapse: collapse;
+}
+
+.nftActivity th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #E5E8EB;
+}
+
+.nftActivity td {
+    padding: 20px 10px;
+    border-bottom: 1px solid #E5E8EB;
+    background: #FBFDFF;
+}
+
+.ethPriceIcon{
+    height: 16px;
+    margin-right: 5px;
+}

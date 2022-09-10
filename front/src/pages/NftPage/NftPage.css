@@ -1,0 +1,52 @@
+.nftPageMain{
+    padding: 30px 150px;
+}
+.nftPageMain_body{
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.nftPageMain_body-img{
+    width: 500px;
+    height: 450px;
+    object-fit: contain;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+.nftPageMain_body_infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.nftPageMain_body_infos_texts{
+    text-align: left;
+    width: 100%;
+}
+
+.nftPageMain_body_infos-nom{
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.nftPageMain_body_infos-owner{
+    margin-bottom: 30px;
+}
+
+.nftPageMain_body_infos-owner span{
+    color: rgb(97, 46, 238);
+}
+.btnImage{
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.nftPageMain_activity{
+    margin-top: 30px;
+}

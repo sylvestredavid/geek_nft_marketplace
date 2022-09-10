@@ -1,0 +1,92 @@
+.createCategoryMain_form{
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.createCategoryMain_form_formfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.createCategoryMain_form_formfield-label{
+    margin-bottom: 10px;
+}
+
+.createCategoryMain_form_formfield-input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.createCategoryMain_form_formfield-hiddenFileInput{
+    display: none;
+}
+
+.createCategoryMain_form_formfield-fileInput{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background: transparent;
+    border: 2px dashed black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.createCategoryMain_form_formfield-fileInput:hover{
+    background: lightgrey;
+}
+
+.createCategoryMain_form_formfield_file{
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    background: transparent;
+    border: 2px dashed black;
+    border-radius: 3px;
+    position: relative;
+}
+
+.createCategoryMain_form_formfield_file>img{
+    height: 300px;
+    width: 300px;
+}
+
+.createCategoryMain_form_formfield_file_delete{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.createCategoryMain_form-btn{
+    background-color: rgb(97, 46, 238);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}

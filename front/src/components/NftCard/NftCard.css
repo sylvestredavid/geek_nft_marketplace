@@ -1,0 +1,79 @@
+.nftCard{
+    width: 365px;
+    text-align: left;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 20%);
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.nftCard_imgContainer{
+    width: 100%;
+    height: 365px;
+    overflow: hidden;
+}
+
+.nftCard_imgContainer > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.2s ease-in;
+}
+
+.nftCard_infos {
+    padding: 12px 16px 50px 16px;
+    position: relative;
+}
+
+.nftCard_infos-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.nftCard_infos-category {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+.nftCard_infos-priceTitle {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.nftCard_infos-priceContainer {
+    display: flex;
+    align-items: center;
+}
+
+.nftCard_infos-priceContainer > img{
+    height: 20px;
+    margin-right: 5px;
+}
+
+.nftCard_infos_buy{
+    position: absolute;
+    bottom: -36px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(97, 46, 238);
+    color: white;
+    height: 36px;
+    font-weight: bold;
+    transition: all 0.2s ease-in;
+}
+
+.nftCard:hover .nftCard_infos_buy{
+    bottom: 0;
+}
+
+.nftCard:hover  .nftCard_imgContainer > img{
+    transform: scale(1.1);
+}

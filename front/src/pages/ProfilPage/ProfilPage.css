@@ -1,0 +1,71 @@
+.profilMain{
+    padding: 20px;
+}
+
+.profilMain-btn {
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.profilMain-btn span {
+    font-size: 20px;
+}
+
+.profilMain-btn img {
+    height: 70px;
+    margin-left: 20px;
+}
+
+.profilMain-username{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.profilMain-account img{
+    height: 20px;
+    margin-right: 10px;
+}
+
+.profilMain_onglets{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #F2F3F5;
+    padding-left: 10px;
+}
+
+.profilMain_onglets button{
+    border: none;
+    background: none;
+    padding: 10px 0;
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.5);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    box-sizing: content-box;
+}
+
+.profilMain_onglets button:hover{
+    color: black;
+}
+
+.selectedOnglet{
+    border-color: black !important;
+}
+
+.profilMain_nftsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: 15px;
+    column-gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
