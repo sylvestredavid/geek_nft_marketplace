@@ -24,9 +24,9 @@ const CategoryPage = () => {
             <main className="categoryMain">
                 <div className="categoryMain_infos">
                     {
-                        category.cover ? <img src={category.cover} className="categoryMain_infos-cover" alt={category.nom} /> : <div className="categoryMain_infos-cover bgWheat" />
+                        category.cover ? <img src={category.cover} className="categoryMain_infos-cover" alt={category.name} /> : <div className="categoryMain_infos-cover bgWheat" />
                     }
-                    <h2 className="categoryMain_infos-name">{category.nom}</h2>
+                    <h2 className="categoryMain_infos-name">{category.name}</h2>
                 </div>
                 <div className="categoryMain_nftsContainer">
                     {

@@ -73,10 +73,10 @@ const NftPage = () => {
             <Header />
             <main className="nftPageMain">
                 <div className="nftPageMain_body">
-                    <img src={nft.fileUri} className="nftPageMain_body-img" alt={nft.nom} />
+                    <img src={nft.fileUri} className="nftPageMain_body-img" alt={nft.name} />
                     <div className="nftPageMain_body_infos">
                         <div className="nftPageMain_body_infos_texts">
-                            <h2 className="nftPageMain_body_infos-nom">{nft.nom}</h2>
+                            <h2 className="nftPageMain_body_infos-name">{nft.name}</h2>
                             <p className="nftPageMain_body_infos-owner">owner: <span>{getOwner()}</span></p>
                             <p className="nftPageMain_body_infos-descr">{nft.description}</p>
                         </div>

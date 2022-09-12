@@ -25,7 +25,7 @@ object JwtUtils {
         )
         return Jwts.builder()
             .claim("id", userDb.id!!)
-            .setSubject(userDb.nom)
+            .setSubject(userDb.name)
             .setId(UUID.randomUUID().toString())
             .setIssuedAt(Date.from(Instant.now()))
             .setExpiration(Date.from(Instant.now().plus(24, ChronoUnit.HOURS)))

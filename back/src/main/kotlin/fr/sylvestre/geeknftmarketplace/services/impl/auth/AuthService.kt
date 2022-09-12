@@ -34,7 +34,7 @@ class AuthService(val userRepository: UserRepository) : IAuthService {
             return LoginResponseDto(UserDto.fromDb(it), JwtUtils.generateToken(userDb))
         }
 
-        val newUserDb = userRepository.save(UserDb(nom = "unamed", address = request.address))
+        val newUserDb = userRepository.save(UserDb(name = "unamed", address = request.address))
 
         return LoginResponseDto(UserDto.fromDb(newUserDb), JwtUtils.generateToken(newUserDb))
     }

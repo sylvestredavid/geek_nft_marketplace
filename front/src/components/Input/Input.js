@@ -5,7 +5,7 @@ import './Input.css'
 const Input = ({label, placeholder, type, step, onChange}) => {
     return (
         <div className="inputContainer">
-            <label htmlFor={label} className="inputContainer-label">Prix</label>
+            <label htmlFor={label} className="inputContainer-label">{label}</label>
             {
                 type === "textarea" ? (
                     <textarea

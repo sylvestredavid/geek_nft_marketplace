@@ -5,14 +5,14 @@ import java.util.UUID
 
 data class UserDto(
     val id: UUID,
-    val nom: String,
+    val name: String,
     val address: String,
 ){
     companion object{
         fun fromDb(db: UserDb): UserDto {
             return UserDto(
                 id =  db.id!!,
-                nom = db.nom,
+                name = db.name,
                 address = db.address
             )
         }

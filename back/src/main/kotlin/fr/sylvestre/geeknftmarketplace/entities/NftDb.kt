@@ -12,7 +12,7 @@ data class NftDb(
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: UUID? = null,
-    val nom: String,
+    val name: String,
     @Type(type = "text")
     val description: String,
     @Type(type = "text")

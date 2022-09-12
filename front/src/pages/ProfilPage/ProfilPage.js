@@ -114,7 +114,7 @@ const ProfilPage = () => {
         <>
             <Header />
             <main className="profilMain">
-                <h2 className="profilMain-username">{user.nom}</h2>
+                <h2 className="profilMain-username">{user.name}</h2>
                 <p  className="profilMain-account"><img src={Eth} alt="icone ETH" />{account.substring(0, 5)}...{account.slice(-4)}</p>
                 <div className="profilMain_onglets">
                     <button className={toDisplay === "owned" ? "selectedOnglet" : ""} onClick={() => setToDisplay("owned")}>Collectés {ownedNfts.length}</button>

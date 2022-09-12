@@ -24,7 +24,7 @@ const ExploreCategoriesPage = () => {
             <main className="exploreMain">
                 <div className="exploreMain_nftsContainer">
                     {
-                        categories.filter(cat => cat.nom.includes(searchValue)).map((cat, index) => (
+                        categories.filter(cat => cat.name.includes(searchValue)).map((cat, index) => (
                             <CategoryCard category={cat} key={index}/>
                         ))
                     }

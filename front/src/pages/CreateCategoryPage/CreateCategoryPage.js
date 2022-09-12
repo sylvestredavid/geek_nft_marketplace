@@ -17,14 +17,14 @@ const CreateCategoryPage = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const categories = useSelector(state => state.categories)
-    const [nom, setNom] = useState(null)
+    const [name, setName] = useState(null)
     const [fileUrl, setFileUrl, uploadImg] = useIpfsFileUpload(getIpfsClient())
 
     const handleForm = (e) => {
         e?.preventDefault()
-        if(nom && fileUrl) {
+        if(name && fileUrl) {
             axios.post(BACKEN_URL + "/categories/create", {
-                nom,
+                name,
                 cover: fileUrl
             }).then(res => {
                 dispatch(setCategories([...categories, res.data]))
@@ -41,8 +41,8 @@ const CreateCategoryPage = () => {
                     <div className="createCategoryMain_form_formfield">
                         <FileUpload label="Image de couverture" onChange={uploadImg} fileUrl={fileUrl} onDelete={() => setFileUrl(null)} />
                     </div>
-                    <Input type="text" placeholder="Nom" label="Nom" onChange={e => setNom(e.target.value)} />
-                    <Button disabled={!nom || !fileUrl} onClick={handleForm}>Envoyer</Button>
+                    <Input type="text" placeholder="Nom" label="Nom" onChange={e => setName(e.target.value)} />
+                    <Button disabled={!name || !fileUrl} onClick={handleForm}>Envoyer</Button>
                 </form>
             </main>
         </>

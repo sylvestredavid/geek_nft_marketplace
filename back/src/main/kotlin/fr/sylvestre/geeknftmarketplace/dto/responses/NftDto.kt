@@ -7,7 +7,7 @@ import javax.persistence.Column
 
 data class NftDto(
     val id: UUID,
-    val nom: String,
+    val name: String,
     val description: String,
     val fileUri: String,
     val owner: String,
@@ -21,14 +21,14 @@ data class NftDto(
         fun fromDb(db: NftDb): NftDto {
             return NftDto(
                 id =  db.id!!,
-                nom = db.nom,
+                name = db.name,
                 description = db.description,
                 fileUri = db.fileUri,
                 owner = db.owner,
                 toSell = db.toSell,
                 weiPrice = db.weiPrice,
                 tokenId = db.tokenId,
-                categoryName = db.category.nom,
+                categoryName = db.category.name,
                 categoryId = db.category.id!!
             )
         }

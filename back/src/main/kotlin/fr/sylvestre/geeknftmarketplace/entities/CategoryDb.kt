@@ -12,7 +12,7 @@ data class CategoryDb(
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: UUID? = null,
-    val nom: String,
+    val name: String,
     @Type(type = "text")
     @Column(nullable = true)
     val cover: String? = null,

@@ -20,7 +20,7 @@ const NftCard = ({nft, showToBuy, showCategory}) => {
                 <img src={nft.fileUri} alt="ape" />
             </div>
             <div className="nftCard_infos">
-                <h2 className="nftCard_infos-name">{nft.nom}</h2>
+                <h2 className="nftCard_infos-name">{nft.name}</h2>
                 {
                     showCategory && (
                         <Link to={"/category/" + nft.categoryId} className="nftCard_infos-category">{nft.categoryName}</Link>

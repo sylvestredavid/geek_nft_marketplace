@@ -43,7 +43,7 @@ const ExploreNftsPage = () => {
             <main className="exploreMain">
                 <div className="exploreMain_nftsContainer">
                     {
-                        displayedNfts.filter(nft => nft.nom.includes(searchValue)).map((nft, index) => (
+                        displayedNfts.filter(nft => nft.name.includes(searchValue)).map((nft, index) => (
                             <NftCard nft={nft} key={index} showToBuy={true} showCategory={true}/>
                         ))
                     }

@@ -5,7 +5,7 @@ import fr.sylvestre.geeknftmarketplace.entities.NftDb
 import java.util.UUID
 
 data class NftRequestDto(
-    val nom: String,
+    val name: String,
     val description: String,
     val fileUri: String,
     val owner: String,
@@ -17,7 +17,7 @@ data class NftRequestDto(
     fun mapRequestToEntity(id: UUID? = null, category: CategoryDb): NftDb {
         return NftDb(
             id = id,
-            nom = this.nom,
+            name = this.name,
             description = this.description,
             fileUri = this.fileUri,
             owner = this.owner,

@@ -1,5 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/geek_nft_marketplace
-    username: postgres
-    password: postgres

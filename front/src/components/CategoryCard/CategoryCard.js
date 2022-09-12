@@ -11,7 +11,7 @@ const CategoryCard = ({category}) => {
             </div>
             <div className="categoryCard_infos">
                 <img src={category.cover} alt="category" />
-                <h2 className="categoryCard_infos-name">{category.nom}</h2>
+                <h2 className="categoryCard_infos-name">{category.name}</h2>
             </div>
         </Link>
     )
