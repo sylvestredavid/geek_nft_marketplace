@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react";
-import './NftActivity.css'
 import {useSelector} from "react-redux";
-import {getWeb3, MARKETPLACE_CONTRACT_ADDRESS, NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS} from "../../config/config";
 import Web3 from "web3";
+
+import {MARKETPLACE_CONTRACT_ADDRESS, NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS, WEB3} from "../../config/config";
 import Eth from '../../assets/icons/eth.svg'
 
-const web3 = getWeb3()
+import './NftActivity.css'
+
 const NftActivity = ({tokenId}) => {
     const account = useSelector(state => state.account)
     const marketplaceContract = useSelector(state => state.marketplaceContract);
@@ -67,7 +68,7 @@ const NftActivity = ({tokenId}) => {
     }
 
     const getNFTTransferEvents = async() => {
-        const nftContract = new web3.eth.Contract(NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS)
+        const nftContract = new WEB3.eth.Contract(NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS)
         const events = await nftContract.getPastEvents('Transfer', {
             fromBlock: 0,
             toBlock: 'latest',
@@ -87,7 +88,7 @@ const NftActivity = ({tokenId}) => {
     }
 
     const getNftMintedEvents = async() => {
-        const nftContract = new web3.eth.Contract(NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS)
+        const nftContract = new WEB3.eth.Contract(NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS)
         const events = await nftContract.getPastEvents('NftMinted', {
             fromBlock: 0,
             toBlock: 'latest',
@@ -105,8 +106,8 @@ const NftActivity = ({tokenId}) => {
     }
 
     const getTimeByBlock = async(txHash) => {
-        const blockN = await web3.eth.getTransaction(txHash)
-        const blockData = await web3.eth.getBlock(blockN.blockNumber)
+        const blockN = await WEB3.eth.getTransaction(txHash)
+        const blockData = await WEB3.eth.getBlock(blockN.blockNumber)
 
         return blockData.timestamp
     }

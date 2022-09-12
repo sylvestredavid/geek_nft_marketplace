@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import Web3 from "web3";
@@ -6,13 +6,13 @@ import axios from "axios";
 
 import Eth from "../../assets/icons/eth.svg";
 import {setNfts} from "../../store/actions";
-import {BACKEN_URL, getWeb3, NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS} from "../../config/config";
+import {BACKEN_URL, NFT_CONTRACT_ADDRESS} from "../../config/config";
 import Button from "../../components/Button/Button";
-import ReselModal from "../../components/ReselModal/ReselModal";
-
-import './NftPage.css'
+import RelistModal from "../../components/RelistModal/RelistModal";
 import NftActivity from "../../components/NftActivity/NftActivity";
 import Header from "../../components/Header/header";
+
+import './NftPage.css'
 
 const NftPage = () => {
     const dispatch = useDispatch()
@@ -102,7 +102,7 @@ const NftPage = () => {
                     <h2 className="nftPageMain_activity-title">Activitée</h2>
                     <NftActivity tokenId={nft.tokenId} />
                 </div>
-                <ReselModal nft={nft} onSubmit={(price) => onSell(price)} onClose={() => setShowReselModal(false)} showModal={showReselModal} />
+                <RelistModal nft={nft} onSubmit={(price) => onSell(price)} onClose={() => setShowReselModal(false)} showModal={showReselModal} />
             </main>
         </>
     )

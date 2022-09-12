@@ -3,22 +3,22 @@ import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 
-import {BACKEN_URL, getIpfsClient} from "../../config/config";
+import {BACKEN_URL, IPFS_CLIENT} from "../../config/config";
 import Button from "../../components/Button/Button";
 import {useIpfsFileUpload} from "../../hooks/useIpfsFileUpload";
 import FileUpload from "../../components/FileUpload/FileUpload";
 import {setCategories} from "../../store/actions";
 import Input from "../../components/Input/Input";
+import Header from "../../components/Header/header";
 
 import './CreateCategoryPage.css'
-import Header from "../../components/Header/header";
 
 const CreateCategoryPage = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const categories = useSelector(state => state.categories)
     const [name, setName] = useState(null)
-    const [fileUrl, setFileUrl, uploadImg] = useIpfsFileUpload(getIpfsClient())
+    const [fileUrl, setFileUrl, uploadImg] = useIpfsFileUpload(IPFS_CLIENT)
 
     const handleForm = (e) => {
         e?.preventDefault()

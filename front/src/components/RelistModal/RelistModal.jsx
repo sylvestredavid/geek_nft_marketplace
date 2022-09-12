@@ -4,9 +4,9 @@ import Input from "../Input/Input";
 import Close from '../../assets/icons/close.png'
 import Button from "../Button/Button";
 
-import './ReselModal.css'
+import './RelistModal.css'
 
-const ReselModal = ({showModal, nft, onClose, onSubmit}) => {
+const RelistModal = ({showModal, nft, onClose, onSubmit}) => {
     const [price, setPrice] = useState()
     return (
         <>
@@ -27,4 +27,4 @@ const ReselModal = ({showModal, nft, onClose, onSubmit}) => {
     )
 }
 
-export default ReselModal
+export default RelistModal

@@ -8,10 +8,10 @@ import NftCard from "../../components/NftCard/NftCard";
 import Eth from '../../assets/icons/eth.svg'
 import Metamask from '../../assets/icons/MetaMask.png'
 import {useLocation} from "react-router-dom";
-import {getWeb3} from "../../config/config";
+import {WEB3} from "../../config/config";
+import Header from "../../components/Header/header";
 
 import './ProfilPage.css'
-import Header from "../../components/Header/header";
 
 const ProfilPage = () => {
     const {state} = useLocation();
@@ -71,8 +71,7 @@ const ProfilPage = () => {
 
     const signToMetamask = () => {
         const msg = `Vous etes sur le point de signer pour geekNft\nEn signant vous acceptez les conditions generales\naddress:${account}\nnonce:${uuidv4()}`
-        const web3 = getWeb3();
-        web3.eth.personal.sign(msg, account).then(r => {
+        WEB3.eth.personal.sign(msg, account).then(r => {
             axios.post("http://localhost:8080/auth/login", {
                 "signature": r,
                 "message": msg,

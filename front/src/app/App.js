@@ -3,9 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-import {getWeb3, MARKETPLACE_CONTRACT_ABI, MARKETPLACE_CONTRACT_ADDRESS} from "../config/config";
+import {MARKETPLACE_CONTRACT_ABI, MARKETPLACE_CONTRACT_ADDRESS, WEB3} from "../config/config";
 import {setAccount, setContract, setEthCours, setUser} from "../store/actions";
-import Header from "../components/Header/header";
 import CreateNftPage from "../pages/CreateNftPage/CreateNftPage";
 import ExploreNftsPage from "../pages/ExploreNftsPage/ExploreNftsPage";
 import {getNftsAction} from "../store/actions/middlewares/nftsAction";
@@ -20,7 +19,6 @@ import './App.css';
 import HomePage from "../pages/HomePage/HomePage";
 
 
-const web3 = getWeb3();
 const App = () => {
     const dispatch = useDispatch()
     const account = useSelector(state => state.account)
@@ -29,9 +27,9 @@ const App = () => {
     async function load() {
       dispatch(getNftsAction())
       dispatch(getCategoriesAction())
-      const accounts = await web3.eth.requestAccounts();
+      const accounts = await WEB3.eth.requestAccounts();
       dispatch(setAccount(accounts[0]));
-      const marketplaceContract = new web3.eth.Contract(MARKETPLACE_CONTRACT_ABI, MARKETPLACE_CONTRACT_ADDRESS)
+      const marketplaceContract = new WEB3.eth.Contract(MARKETPLACE_CONTRACT_ABI, MARKETPLACE_CONTRACT_ADDRESS)
       dispatch(setContract(marketplaceContract));
       const cours = await axios.get("https://min-api.cryptocompare.com/data/price?fsym=eth&tsyms=EUR")
       dispatch(setEthCours(cours.data.EUR))
@@ -50,7 +48,7 @@ const App = () => {
   }, [dispatch])
 
   const handleAccountChange = async() => {
-    const accounts = await web3.eth.requestAccounts();
+    const accounts = await WEB3.eth.requestAccounts();
     if(accounts[0] !== account) {
       dispatch(setAccount(accounts[0]));
       dispatch(setUser(null))

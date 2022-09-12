@@ -3,9 +3,9 @@ import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 
 import NftCard from "../../components/NftCard/NftCard";
+import Header from "../../components/Header/header";
 
 import './CategoryPage.css'
-import Header from "../../components/Header/header";
 
 const CategoryPage = () => {
     const {id} = useParams()

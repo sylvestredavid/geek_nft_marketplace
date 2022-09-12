@@ -4,18 +4,16 @@ import Web3 from "web3";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
-import {BACKEN_URL, getIpfsClient, getWeb3, NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS} from "../../config/config";
+import {BACKEN_URL, IPFS_CLIENT, NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS, WEB3} from "../../config/config";
 import {setNfts} from "../../store/actions";
 import Button from "../../components/Button/Button";
 import {useIpfsFileUpload} from "../../hooks/useIpfsFileUpload";
 import FileUpload from "../../components/FileUpload/FileUpload";
 import Input from "../../components/Input/Input";
-
-import './CreateNftPage.css'
 import Header from "../../components/Header/header";
 
-const client = getIpfsClient()
-const web3 = getWeb3()
+import './CreateNftPage.css'
+
 const CreateNftPage = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -28,7 +26,7 @@ const CreateNftPage = () => {
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState(0)
     const [selectedCategory, setSelectedCategory] = useState(categories[0])
-    const [fileUri, setFileUri, uploadImg] = useIpfsFileUpload(client)
+    const [fileUri, setFileUri, uploadImg] = useIpfsFileUpload(IPFS_CLIENT)
 
     async function uploadToIPFS() {
         if (!name || !description || !price || !fileUri) {
@@ -39,7 +37,7 @@ const CreateNftPage = () => {
                 name, description, image: fileUri
             })
             try {
-                const added = await client.add(data)
+                const added = await IPFS_CLIENT.add(data)
                 const url = `https://ipfs.infura.io/ipfs/${added.path}`
                 // after metadata is uploaded to IPFS, return the URL to use it in the transaction
                 return url
@@ -55,7 +53,7 @@ const CreateNftPage = () => {
             const url = await uploadToIPFS();
             const fees = await marketplaceContract.methods.getListingFee().call()
             const weiPrice = Web3.utils.toWei(price, "ether");
-            const nftContract = new web3.eth.Contract(NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS)
+            const nftContract = new WEB3.eth.Contract(NFT_CONTRACT_ABI, NFT_CONTRACT_ADDRESS)
             nftContract.methods.mint(url).send({from: account}).on('receipt', function (receipt) {
                 console.log('minted', receipt);
                 // List the NFT

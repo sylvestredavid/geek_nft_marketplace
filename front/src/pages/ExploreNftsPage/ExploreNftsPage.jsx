@@ -2,9 +2,9 @@ import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 
 import NftCard from "../../components/NftCard/NftCard";
+import Header from "../../components/Header/header";
 
 import './ExploreNftsPage.css'
-import Header from "../../components/Header/header";
 
 const ExploreNftsPage = () => {
     const marketplaceContract = useSelector(state => state.marketplaceContract)

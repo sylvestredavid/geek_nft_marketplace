@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import {useSelector} from "react-redux";
 
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
+import Header from "../../components/Header/header";
 
 import './ExploreCategoriesPage.css'
-import Header from "../../components/Header/header";
 
 const ExploreCategoriesPage = () => {
     const categories = useSelector(state => state.categories)
